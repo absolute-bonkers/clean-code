@@ -40,3 +40,7 @@ similar-looking line.
 
 Every topic has runnable source under `src/main/java` and tests under
 `src/test/java`. Examples use only the JDK at runtime.
+
+Further reading: Martin Fowler's
+[refactoring catalog](https://refactoring.com/catalog/) provides named,
+behavior-preserving structural transformations beyond these small examples.
