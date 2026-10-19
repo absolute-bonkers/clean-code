@@ -12,6 +12,24 @@ repository root:
 ./gradlew :dry:test
 ```
 
+## A practical improvement loop
+
+```mermaid
+flowchart LR
+    Need["Understand the current requirement"] --> Simple["Choose the clearest solution (KISS)"]
+    Simple --> Scope["Build only what is needed now (YAGNI)"]
+    Scope --> Implement["Implement and test behavior"]
+    Implement --> Smell{"Duplication or design smell?"}
+    Smell -->|"Yes"| Refactor["Refactor in small steps"]
+    Refactor --> Implement
+    Smell -->|"No"| Maintain["Keep the code easy to change"]
+    Refactor -. "remove repeated rules" .-> DRY["DRY"]
+```
+
+Refactoring should preserve observable behavior; tests provide a safety net.
+DRY means avoiding duplicated knowledge, not mechanically eliminating every
+similar-looking line.
+
 | Topic | Module | The quick idea |
 | --- | --- | --- |
 | Don't Repeat Yourself (DRY) | [dry](dry/README.md) | Keep one authoritative home for a rule. |
